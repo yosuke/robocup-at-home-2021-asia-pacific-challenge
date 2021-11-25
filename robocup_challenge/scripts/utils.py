@@ -159,7 +159,7 @@ whole_body = moveit_commander.MoveGroupCommander("whole_body_light")
 # whole_body = moveit_commander.MoveGroupCommander("whole_body_weighted")
 whole_body.allow_replanning(True)
 whole_body.set_workspace([-3.0, -3.0, 3.0, 3.0])
-whole_body.set_max_velocity_scaling_factor(0.8)
+whole_body.set_max_velocity_scaling_factor(1.0)
 
 def move_wholebody_ik(x, y, z, roll, pitch, yaw):
     u"""ロボットを全身の逆運動学で制御する関数
@@ -197,7 +197,7 @@ def move_wholebody_ik(x, y, z, roll, pitch, yaw):
 
 # moveitでの制御対象としてアームを指定
 arm = moveit_commander.MoveGroupCommander('arm')
-arm.set_max_velocity_scaling_factor(0.8)
+arm.set_max_velocity_scaling_factor(1.0)
 
 def move_arm_neutral():
     u"""ロボットをニュートラルの姿勢に移動
@@ -225,7 +225,7 @@ def move_arm_init():
 
 # moveitでの制御対象としてハンドを指定
 gripper = moveit_commander.MoveGroupCommander("gripper")
-gripper.set_max_velocity_scaling_factor(0.8)
+gripper.set_max_velocity_scaling_factor(1.0)
 
 def move_hand(v):
     u"""ハンドを制御
@@ -246,7 +246,7 @@ def move_hand(v):
 
 # moveitでの制御対象として頭部を指定
 head = moveit_commander.MoveGroupCommander("head")
-head.set_max_velocity_scaling_factor(0.8)
+head.set_max_velocity_scaling_factor(1.0)
 
 def move_head_tilt(v):
     u"""ハンドを制御
